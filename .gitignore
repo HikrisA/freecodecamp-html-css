@@ -1,0 +1,30 @@
+# VS Code settings (puedes subir los tuyos si es un equipo de trabajo, pero por defecto los ignoramos)
+.vscode/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de Live Server (por si llegas a usar temporalmente)
+.liveserver*
+
+# Archivos temporales del sistema
+*.log
+*.tmp
+*.swp
+
+# Dependencias (si en algún momento usas npm o yarn)
+node_modules/
+
+# Archivos de compilación si usas preprocesadores (SCSS, etc.)
+dist/
+build/
+
+# Archivos personales o privados
+.env
+*.env.*
