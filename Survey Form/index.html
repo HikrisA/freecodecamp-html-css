@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>League of Legends Survey Form</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1 id="title">League of Lengends Survey Form</h1>
+        <p id="description">This is a survey form made to practice my HTML and CSS knowledge</p>
+        <form id="survey-form">
+            <fieldset>
+                <label for="name" id="name-label">
+                    Enter your summoner name: <input required id="name" type="text" placeholder="Enter your name">
+                </label>
+                <label for="email" id="email-label">
+                    Enter your count associated email: <input required id="email" type="email" placeholder="Enter your email">
+                </label>
+                <label for="number" id="number-label">
+                    Enter your age: <input required id="number" type="number" min="18" max="120" placeholder="Enter your age">
+                </label>
+                <label for="dropdown">Enter your rank: 
+                    <select id="dropdown">
+                        <option value="">(select one)</option>
+                        <option value="1">Iron</option>
+                        <option value="2">Bronze</option>
+                        <option value="3">Silver</option>
+                        <option value="4">Gold</option>
+                        <option value="5">Platinum</option>
+                        <option value="6">Emerald</option>
+                        <option value="7">Diamond</option>
+                        <option value="8">Master</option>
+                        <option value="9">Grand Master</option>
+                        <option value="10">Challenger</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>            
+                <legend>Would you recommend League of Legends?</legend>
+                <label for="no-recommendation">
+                    <input checked type="radio" name="choice" value="0" id="no-recommendation" class="inline">No
+                </label>
+                <label for="never-recommendation">
+                    <input type="radio" name="choice" value="1" id="never-recommendation" class="inline">Never
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Please tell us, what kind of distress has League of Legends caused you?</legend> 
+                <label for="opcion-1"><input type="checkbox" name="opcion-1" value="1" class="inline">Anger</label>
+                <label for="opcion-2"><input type="checkbox" name="opcion-2" value="2" class="inline">Anxiety</label>
+                <label for="opcion-3"><input type="checkbox" name="opcion-3" value="3" class="inline">Wrath</label>
+                <label for="opcion-4"><input type="checkbox" name="opcion-4" value="4" class="inline">Sadness</label>
+                <label for="opcion-5"><input type="checkbox" name="opcion-5" value="5" class="inline">Frustration</label>
+                <label for="opcion-6"><input type="checkbox" name="opcion-6" value="6" class="inline">Desperation</label>
+                <label for="opcion-7"><input type="checkbox" name="opcion-7" value="7" class="inline">Loss of faith in humanity</label>
+            </fieldset>
+            <label for="comments">Would you like to give us some recommendations on how to imporve the game?
+                <textarea id="comments" placeholder="I suggest a change in..." rows="3"></textarea>
+            </label>
+            <label for="submit">
+                <input id="submit" type="submit">
+            </label>
+        </form>
+    </body>
+</html>
