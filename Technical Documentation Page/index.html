@@ -7,22 +7,34 @@
     </head>
     <body>
         <nav id="navbar">
-            <header><strong>PIC Microcontrollers</strong></header>
-            <a href="#Introduction" class="nav-link">
-                Introduction
-            </a>
-            <a href="#Architecture" class="nav-link">
-                Architecture
-            </a>
-            <a href="#PIC_family" class="nav-link">
-                PIC Family
-            </a>
-            <a href="#Microcontrollers_programmation" class="nav-link">
-                Microcontrollers programmation
-            </a>
-            <a href="#Example_project" class="nav-link">
-                Example project
-            </a>
+            <div class="nav-title">
+                <header id="nav-title">PIC Microcontrollers</header>
+            </div>
+            <div class="nav-header">
+                <a href="#Introduction" class="nav-link">
+                    Introduction
+                </a>
+            </div>
+            <div class="nav-header">
+                <a href="#Architecture" class="nav-link">
+                    Architecture
+                </a>
+            </div>
+            <div class="nav-header">
+                <a href="#PIC_family" class="nav-link">
+                    PIC Family
+                </a>
+            </div>
+            <div class="nav-header">
+                <a href="#Microcontrollers_programmation" class="nav-link">
+                    Microcontrollers programmation
+                </a>
+            </div>
+            <div class="nav-header">
+                <a href="#Example_project" class="nav-link">
+                    Example project
+                </a>
+            </div>
         </nav>
         <main id="main-doc">
             <section class="main-section" id="Introduction">
@@ -105,17 +117,214 @@
                 <header class="section-header">
                     PIC family
                 </header>
+                <p>
+                    Microchip Technology has developed a wide range of PIC microcontrollers, each suited to 
+                    different levels of complexity, performance, and cost. These families are generally grouped 
+                    by their architecture and feature set. The most commonly used families include:
+                </p>
+                <ul>
+                    <li>
+                        PIC10 Series: These are ultra-low-cost, small-footprint microcontrollers with very 
+                        limited functionality. They are ideal for simple tasks such as controlling a single 
+                        LED or button.
+                    </li>
+                    <li>
+                        PIC12 Series: Slightly more advanced than PIC10, this series still offers compact 
+                        designs but with more I/O pins and better features, such as integrated ADCs and timers.
+                    </li>
+                    <li>
+                        PIC16 Series: A very popular family among students and hobbyists. These microcontrollers 
+                        provide a good balance between performance and affordability, and support more advanced 
+                        peripherals and programming options.
+                    </li>
+                    <li>
+                        PIC18 Series: Designed for applications requiring higher performance, larger memory, 
+                        and more advanced peripherals. They often support USB communication and complex timing 
+                        functions.
+                    </li>
+                    <li>
+                        PIC24 and dsPIC Series: These are 16-bit and 32-bit microcontrollers intended for 
+                        high-performance and signal-processing applications. The dsPIC line combines a 
+                        microcontroller with digital signal processing (DSP) capabilities.
+                    </li>
+                </ul>
+                <p>
+                    Each family supports different instruction sets and development tools, but all share a 
+                    consistent design philosophy that makes it easier to scale projects up or down based on 
+                    performance needs.
+                </p>
             </section>
             <section class="main-section" id="Microcontrollers_programmation">
                 <header class="section-header">
                     Microcontrollers programmation
                 </header>
+                <p>
+                    PIC microcontrollers can be programmed in several languages, including assembly and C. 
+                    However, the most widely used language today is C, thanks to its readability, portability, 
+                    and support through tools like MPLAB X IDE and the XC8 compiler, both provided by Microchip 
+                    Technology.
+                </p>
+                <p>
+                    A typical workflow when programming PICs includes:
+                </p>
+                <ol>
+                    <li>
+                        Writing the source code in C.
+                    </li>
+                    <li>
+                        Compiling it using the XC8 compiler.
+                    </li>
+                    <li>
+                        Uploading the generated <code class="code-text">.hex</code> file to the microcontroller 
+                        using a programmer such as a PICkit.
+                    </li>
+                </ol>
+                <p>
+                    Below are some basic code snippets that illustrate common programming patterns used with PIC 
+                    microcontrollers:
+                </p>
+                <ol>
+                    <li>
+                        <p>
+                            Basic Program Structure
+                        </p>
+                        <pre>
+<code class="code-section">
+#include <xc.h>
+
+void main(void) {
+    // Initialization code
+    while(1) {
+        // Main loop
+    }
+}</code>
+                        </pre>
+                    </li>
+                    <li>
+                        <p>
+                            Setting a Pin as Output
+                        </p>
+                        <pre>
+<code class="code-section">
+TRISB0 = 0; // Configure RB0 as an output
+PORTBbits.RB0 = 0; // Set RB0 to logic low</code>
+                        </pre>
+                    </li>
+                    <li>
+                        <p>
+                            Delay Function
+                        </p>
+                        <pre>
+                            <code class="code-section">
+#define _XTAL_FREQ 4000000 // Define clock frequency
+__delay_ms(500); // Delay for 500 milliseconds</code>
+                        </pre>
+                    </li>
+                    <li>
+                        <p>
+                            Toggling a Pin
+                        </p>
+                        <pre>
+                            <code class="code-section">
+PORTBbits.RB0 = !PORTBbits.RB0; // Toggle the state of RB0</code>
+                        </pre>
+                    </li>
+                    <li>
+                        <p>
+                            Configuration Bits (simplified)
+                        </p>
+                        <pre>
+                            <code class="code-section">
+#pragma config FOSC = INTRC_NOCLKOUT // Use internal oscillator
+#pragma config WDTE = OFF            // Disable watchdog timer
+#pragma config PWRTE = ON            // Enable power-up timer</code>
+                        </pre>
+                    </li>
+                </ol>
+                <p>
+                    These code snippets demonstrate how to configure and control the I/O ports of a PIC 
+                    microcontroller using the XC8 compiler. More advanced programs can include interrupts, 
+                    ADCs, PWM, and communication protocols like UART or I²C.
+                </p>
             </section>
             <section class="main-section" id="Example_project">
                 <header class="section-header">
                     Example project
                 </header>
-            </section>
+                <p>
+                    One of the most common beginner projects with a PIC microcontroller is making an LED blink. 
+                    This simple task introduces you to working with I/O pins, configuring registers, and using 
+                    delays—all essential skills for embedded development.
+                </p>
+                <p>
+                    In this example, we will use a PIC microcontroller (such as the PIC16F877A) to turn an LED 
+                    on and off with a 500 ms delay. The LED is connected to pin <b>RB0</b>.
+                </p>
+                <p>
+                    Before we start, make sure you have:
+                </p>
+                <ul>
+                    <li>
+                        MPLAB X IDE installed
+                    </li>
+                    <li>
+                        The XC8 compiler
+                    </li>
+                    <li>
+                        A programmer like PICkit 3 or 4
+                    </li>
+                    <li>
+                        A breadboard and basic electronic components
+                    </li>
+                </ul>
+                <pre>
+                    <code class="code-section">
+#define _XTAL_FREQ 4000000
+#include &#60;xc.h&#62;
+
+// Configuration bits (example for PIC16F877A)
+#pragma config FOSC = INTRC_NOCLKOUT
+#pragma config WDTE = OFF
+#pragma config PWRTE = ON
+#pragma config BOREN = OFF
+#pragma config LVP = OFF
+#pragma config CPD = OFF
+#pragma config WRT = OFF
+#pragma config CP = OFF
+
+void main(void) {
+    TRISB0 = 0; // Set RB0 as output
+
+    while(1) {
+        PORTBbits.RB0 = 1; // Turn LED on
+        __delay_ms(500);   // Wait 500 ms
+        PORTBbits.RB0 = 0; // Turn LED off
+        __delay_ms(500);   // Wait 500 ms
+    }
+}</code>
+                </pre>
+                <p>
+                    How It Works
+                </p>
+                <ul>
+                    <li>
+                        <code class="code-text">TRISB0 = 0;</code> sets pin <b>RB0</b> as an output.
+                    </li>
+                    <li>
+                        <code class="code-text">PORTBbits.RB0 = 1;</code> turns the LED on by sending 5V to the 
+                        pin.
+                    </li>
+                    <li>
+                        <code class="code-text">__delay_ms(500);</code> waits 500 milliseconds.
+                    </li>
+                    <li>
+                        Then it turns the LED off and repeats the cycle.
+                    </li>
+                </ul>
+                <p>
+                    This is a simple yet powerful example that can be expanded into more complex applications 
+                    like traffic lights, signal generators, or sensor-controlled systems.
+                </p>
             </section>
         </main>
     </body>
