@@ -1,0 +1,167 @@
+:root{
+    --main-colour: #228C22;
+    --font-colour: #1A1A1A;
+    --header-height: 70px;
+    --background-colour: #001400
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    padding-top: var(--header-height);
+}
+
+header{
+    height: var(--header-height);
+    width: 100%;
+    background-color: var(--main-colour);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: flex-end;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-right: 40px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+.text-section{
+    height: calc(100vh - var(--header-height, 0px));
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-colour);
+    align-items: center;
+    justify-content: center;
+}
+
+.section-header{
+    height: fit-content;
+    text-align: center;
+    color: white;
+}
+
+.section-title{
+    font-size: 60px;
+    margin: 0;
+}
+
+.section-header p{
+    font-family: monospace;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#projects{
+    scroll-margin-top: 50px;
+}
+
+#projects h1{
+    border: 5px solid var(--main-colour);
+    text-align: center;
+    font-size: 50px;
+    margin: 50px auto;
+    max-width: fit-content;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: #f3f3f3;
+}
+
+.projects-container{
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1300px;
+    padding: 0 20px;
+}
+
+.project-link{
+    text-decoration: none;
+    display: block;
+}
+
+.project-tile{
+    text-align: center;
+    border: 2px solid var(--main-colour);
+    border-radius: 10px;
+    background-color: var(--main-colour);
+}
+
+.project-image{
+    width: 100%;
+    margin: 0;
+    border-radius: 8px 8px 0 0;
+}
+
+.project-name{
+    padding: 20px 0;
+    color: white;
+}
+
+.profile-link:hover, .project-link:hover{
+    transform: scale(1.1);
+    transition: 1s ease-in-out 0ms;
+}
+
+#contact{
+    gap: 30px;
+    margin-top: 70px;
+}
+
+.contact-links-container{
+    display: flex;
+    gap: 15px;
+}
+
+.profile-link{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.profile-link img{
+    max-width: 40px;
+    background-color: transparent;
+}
+
+#linkedin-logo{
+    border-radius: 50%;
+}
+
+@media (max-width: 1220px){
+    .projects-container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 815px){
+    .projects-container{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px;
+    }
+}
